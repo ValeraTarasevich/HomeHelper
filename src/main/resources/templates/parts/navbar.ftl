@@ -7,10 +7,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav header-place">
-            <a class="nav-item nav-link active" href="/"><i class="fa fa-home"></i>Главная</a>
+            <a class="nav-item nav-link" href="/"><i class="fa fa-home"></i>Главная</a>
             <a class="nav-item nav-link" href="/">Каталог услуг</a>
-            <a class="nav-item nav-link" href="Works.jsp">Наши работы</a>
-            <a class="nav-item nav-link" href="Contact.jsp">Контакты</a>
+            <a class="nav-item nav-link" href="/works">Наши работы</a>
+            <a class="nav-item nav-link" href="/contact">Контакты</a>
             <#if isAdmin>
             <a class="nav-item nav-link" href="/user">Список пользователей</a>
             </#if>
@@ -21,7 +21,7 @@
                 <div class="navbar-text">${name}</div>
                 <form action="/logout" method="post">
                     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                    <input type="submit" value="Выйти" />
+                    <button class="btn btn-default ml-2">Выйти</button>
                 </form>
             <#else>
                 <a class="nav-item nav-link" href="/registration">Регистрация</a>

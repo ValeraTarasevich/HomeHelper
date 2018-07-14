@@ -37,4 +37,14 @@ public class MainController {
         model.put("messages", message);
         return "main";
     }
+
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
+
+    @GetMapping("/works")
+    public String works(){
+        return "works";
+    }
 }
