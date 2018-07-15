@@ -1,7 +1,9 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
 <br>
+<div class="col-md-6">
     <h5>${username}</h5>
+</div>
     ${message?ifExists}
 <form method="post">
     <div class="row">
@@ -23,20 +25,20 @@
                 <div class="col-sm-8">
                     <input type="password" class="form-control" name="password" placeholder="Пароль">
                 </div>
-                <div class="form-group ">
-                    <label class="col-sm-6">Адрес электронной почты</label>
-                    <div class="col-sm-8">
-                        <input type="email" class="form-control" name="email" placeholder="Адрес электронной почты">
-                    </div>
+            </div>
+            <div class="form-group ">
+                <label class="col-sm-6">Адрес электронной почты</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" name="email" placeholder="Адрес электронной почты">
                 </div>
-                <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                <div class="col-sm-5">
-                    <button class="btn btn-default" type="submit">Сохранить</button>
-                </div>
+            </div>
+            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+            <div class="col-sm-5">
+                <button class="btn btn-default" type="submit">Сохранить</button>
             </div>
         </div>
         <div class="col-md-6">
-            <img src="/img/profile.jpg" width="400" height="400">
+            <img src="/img/profile.jpg" width="350" height="350">
         </div>
 </form>
 

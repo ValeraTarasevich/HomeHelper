@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="container mt-3">
+<div class="container userList mt-4">
     <table>
         <thead>
         <tr>
