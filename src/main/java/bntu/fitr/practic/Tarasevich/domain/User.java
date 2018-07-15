@@ -1,9 +1,12 @@
 package bntu.fitr.practic.Tarasevich.domain;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Set;
 
@@ -13,10 +16,16 @@ public class User implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Length(min = 5, max = 20, message = "Логин должен содержать от 5 до 20 символов")
     private String username;
+    @Length(min = 3, max = 20, message = "Пароль должен содержать от 3 до 20 символов")
     private String password;
+    @Length(min = 3, max = 20, message = "Фамилия должна содержать от 3 до 20 символов")
     private String surname;
+    @Length(min = 3, max = 20, message = "Имя должно содержать от 3 до 20 символов")
     private String name;
+    @Email(message = "Адрес электронной почты не корректный")
+    @Length(min = 5, max = 30, message = "Логин должен содержать от 5 до 30 символов и символ '@'")
     private String email;
     private boolean active;
 

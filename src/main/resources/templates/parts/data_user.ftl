@@ -42,38 +42,75 @@
             <div class="form-group ">
                 <label class="col-sm-3">Фамилия</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="surname" placeholder="Фамилия">
+                    <input type="text" class="form-control ${(surnameError??)?string('is-invalid', '')}"
+                           name="surname" placeholder="Фамилия" value="<#if user??>${user.surname}</#if>">
+                    <#if surnameError??>
+                        <div class="invalid-feedback">
+                            ${surnameError}
+                        </div>
+                    </#if>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="col-sm-3">Имя</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="name" placeholder="Имя">
+                    <input type="text" class="form-control ${(nameError??)?string('is-invalid', '')}"
+                           name="name" placeholder="Имя" value="<#if user??>${user.name}</#if>">
+                     <#if nameError??>
+                        <div class="invalid-feedback">
+                            ${nameError}
+                        </div>
+                     </#if>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="col-sm-3">Логин</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="username" placeholder="Логин">
+                    <input type="text" class="form-control ${(usernameError??)?string('is-invalid', '')}"
+                           name="username" placeholder="Логин" value="<#if user??>${user.username}</#if>">
+                    <#if usernameError??>
+                        <div class="invalid-feedback">
+                            ${usernameError}
+                        </div>
+                    </#if>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="col-sm-3">Пароль</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" name="password" placeholder="Пароль">
+                    <input type="password" class="form-control ${(passwordError??)?string('is-invalid', '')}"
+                           name="password" placeholder="Пароль">
+                    <#if passwordError??>
+                        <div class="invalid-feedback">
+                            ${passwordError}
+                        </div>
+                    </#if>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="col-sm-5">Повторите пароль</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" name="passwordRP" placeholder="Пароль">
+                    <input type="password" class="form-control ${(passwordError??)?string('is-invalid', '')}"
+                           name="password2" placeholder="Пароль">
+                    <#if password2Error??>
+                        <div class="invalid-feedback">
+                            ${password2Error}
+                        </div>
+                    </#if>
                 </div>
             </div>
             <div class="form-group ">
                 <label class="col-sm-6">Адрес электронной почты</label>
                 <div class="col-sm-8">
-                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Адрес электронной почты">
+                    <input type="email" class="form-control ${(emailError??)?string('is-invalid', '')}"
+                           name="email" aria-describedby="emailHelp" placeholder="Адрес электронной почты"
+                           value="<#if user??>${user.email}</#if>">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <#if emailError??>
+                        <div class="invalid-feedback">
+                            ${emailError}
+                        </div>
+                    </#if>
                 </div>
             </div>
 

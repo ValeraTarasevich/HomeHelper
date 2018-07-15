@@ -14,6 +14,9 @@
             <#if isAdmin>
             <a class="nav-item nav-link" href="/user">Список пользователей</a>
             </#if>
+            <#if user??>
+            <a class="nav-item nav-link" href="/user/profile">Профиль</a>
+            </#if>
         </div>
 
         <div class="navbar-nav header-place-two">
